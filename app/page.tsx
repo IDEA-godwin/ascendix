@@ -1,8 +1,7 @@
-import Link from "next/link";
+import { ChevronRight, Sparkles, Swords } from "lucide-react";
 import { Meteors } from "~/components/meteors";
 import { Header } from "~/components/personals/header";
 import { Button } from "~/components/ui/button";
-import { ChevronRight, Sparkles, Swords, User, User2 } from "lucide-react";
 
 export default function Home() {
   return (
