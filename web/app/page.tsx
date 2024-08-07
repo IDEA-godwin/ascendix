@@ -1,7 +1,7 @@
 import { ChevronRight, Sparkles, Swords } from "lucide-react";
-import { Meteors } from "~/web/components/meteors";
-import { Header } from "~/web/components/personals/header";
-import { Button } from "~/web/components/ui/button";
+import { Meteors } from "~/components/meteors";
+import { Header } from "~/components/personals/header";
+import { Button } from "~/components/ui/button";
 
 export default function Home() {
   return (
@@ -44,7 +44,7 @@ export default function Home() {
           <Sparkles className="absolute -bottom-4 right-2/3 rotate-6 animate-pulse" />
           Participace in Quests
         </h2>
-        <div className="container p-3 mx-auto mt-20 gap-4 grid grid-cols-1 md:grid-cols-3">
+        <div className="container p-3 mx-auto mt-11 gap-4 grid grid-cols-1 md:grid-cols-3">
           <ListTile />
           <ListTile />
           <ListTile />
@@ -58,10 +58,9 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="m-2 mt-10 bg-foreground/20 rounded-md md:m-10">
-        <div className="container p-3 py-6 mx-auto text-center">
-          <div className="text-2xl font-semibold">Join our Communities</div>
-          <div className="flex flex-col items-center justify-between mt-4 text-lg font-semibold md:flex-row gap-4">
+      <footer className="mt-14 bg-foreground/20 rounded-md md:mt-20 md:mb-5 md:mx-10">
+        <div className="container p-3 mx-auto text-center">
+          <div className="flex flex-col items-center justify-between text-lg font-semibold md:flex-row gap-4">
             <div>
               &#169;{" "}
               <span className="text-base font-normal">
@@ -69,14 +68,11 @@ export default function Home() {
               </span>
             </div>
 
-            <div className="text-4xl text-transparent bg-gradient-to-br bg-clip-text from-primary to-primary-foreground">
-              Ascendix
-            </div>
             <div className="flex items-center gap-3">
-              <Button variant={"secondary"} className="px-6 py-5">
+              <Button variant={"secondary"} className="px-3 py-2">
                 <svg
-                  width="31"
-                  height="40"
+                  width="19"
+                  height="19"
                   viewBox="0 0 71 80"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -87,8 +83,8 @@ export default function Home() {
                   />
                 </svg>
               </Button>
-              <Button variant={"secondary"} className="px-6 py-5">
-                <svg viewBox="0 0 24 24" height={24} width={24}>
+              <Button variant={"secondary"} className="px-3 py-2">
+                <svg viewBox="0 0 24 24" height={16} width={16}>
                   <g>
                     <path
                       fill="currentColor"

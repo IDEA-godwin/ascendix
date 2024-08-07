@@ -1,5 +1,5 @@
-hardhat-app/node_modules
-hardhat-app/.env
+
+/*/.env
 
 # Hardhat files
 hardhat-app/cache
@@ -16,6 +16,6 @@ hardhat-app/coverage.json
 # Hardhat Ignition default folder for deployments against a local node
 hardhat-app/ignition/deployments/chain-31337
 
-dapp/node_modules
-dapp/.next
-dapp/next-env.d.ts
+/*/node_modules
+/*/.next
+/*/next-env.d.ts
