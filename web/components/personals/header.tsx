@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Button } from "~/components/ui/button";
+import { Button } from "~/web/components/ui/button";
 
 export function Header() {
   return (

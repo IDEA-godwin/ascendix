@@ -1,7 +1,7 @@
 import { ChevronRight, Sparkles, Swords } from "lucide-react";
-import { Meteors } from "~/components/meteors";
-import { Header } from "~/components/personals/header";
-import { Button } from "~/components/ui/button";
+import { Meteors } from "~/web/components/meteors";
+import { Header } from "~/web/components/personals/header";
+import { Button } from "~/web/components/ui/button";
 
 export default function Home() {
   return (
