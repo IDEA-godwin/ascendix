@@ -1,6 +1,6 @@
 "use client";
 import { motion, useAnimation } from "framer-motion";
-import { ClockIcon, RocketIcon } from "lucide-react";
+import { ClockIcon, RocketIcon, Wallet2Icon, WalletIcon } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 import {
@@ -52,7 +52,12 @@ export function Header() {
 
         <Modal>
           <Button className="" size={"lg"} asChild>
-            <ModalTrigger>Connect Wallet</ModalTrigger>
+            <ModalTrigger>
+              <div className="hidden md:block">Connect Wallet</div>
+              <div className="block md:hidden">
+                <WalletIcon />
+              </div>
+            </ModalTrigger>
           </Button>
           <ModalBody className="bg-red-200">
             <ModalContent>

@@ -1,6 +1,8 @@
 import { ChevronRight, Sparkles, Swords } from "lucide-react";
+import Link from "next/link";
 import { Meteors } from "~/components/meteors";
 import { Header } from "~/components/personals/header";
+import { ListTile } from "~/components/personals/list-tile";
 import { Button } from "~/components/ui/button";
 
 export default function Home() {
@@ -51,9 +53,11 @@ export default function Home() {
         </div>
 
         <div className="flex justify-center mt-10">
-          <Button className="space-x-2">
-            <div>View All</div>
-            <Swords />
+          <Button asChild className="space-x-2">
+            <Link href={"/view-all"}>
+              <div>View All</div>
+              <Swords />
+            </Link>
           </Button>
         </div>
       </section>
@@ -102,31 +106,5 @@ export default function Home() {
         </div>
       </footer>
     </main>
-  );
-}
-
-function ListTile() {
-  return (
-    <div className="relative flex items-start p-4 overflow-hidden backdrop-blur-md bg-secondary/40 rounded-md gap-4">
-      <Meteors number={20} />
-      <div className="p-3 rounded-full bg-secondary-foreground/20 w-fit">
-        <Swords />
-      </div>
-      <div className="pt-2 space-y-2">
-        <div>Name Of Quest</div>
-        <div className="text-xs text-muted-foreground line-clamp-3">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium
-          quia laudantium eum minus rerum similique dolores perferendis placeat,
-          hic necessitatibus odit eius qui a expedita quo iure. Nesciunt,
-          officia animi!
-        </div>
-        <div className="flex justify-end pt-4">
-          <Button size={"sm"} className="space-x-0.5">
-            <div>View</div>
-            <ChevronRight />
-          </Button>
-        </div>
-      </div>
-    </div>
   );
 }
