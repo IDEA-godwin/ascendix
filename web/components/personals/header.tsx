@@ -2,7 +2,9 @@
 import { motion, useAnimation } from "framer-motion";
 import { ClockIcon, RocketIcon, Wallet2Icon, WalletIcon } from "lucide-react";
 import Link from "next/link";
-import React from "react";
+// @ts-ignore
+import {LoginButton, useOCAuth} from '@opencampus/ocid-connect-js'
+import {useEffect, useState} from "react";
 import {
   CloseIcon,
   Modal,
@@ -21,6 +23,15 @@ export function Header() {
   const [wallet, setwallet] = React.useState("");
   const { setOpen } = useModal();
   const controls = useAnimation();
+
+  const [ authenticated, setAuthenticated]  = useState<boolean>(false)
+  const { authState, ocAuth } = useOCAuth();
+
+  useEffect(() => {
+    console.log(authState);
+    setAuthenticated(authState.isAuthenticated);
+    if (authState.isAuthenticated) console.log(ocAuth?.getAuthInfo());
+  }, []);
 
   function handleButtonClick() {
     setOpen(false);
@@ -49,6 +60,8 @@ export function Header() {
         >
           Ascendix
         </Link>
+        { !authenticated && <LoginButton/> }
+        { authenticated && <span>{ ocAuth.getAuthInfo()?.edu_username }</span>}
 
         <Modal>
           <Button className="" size={"lg"} asChild>
