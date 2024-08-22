@@ -20,7 +20,7 @@ import { Label } from "~/components/ui/label";
 import { TypographyH4 } from "./typography";
 
 export function Header() {
-  const [wallet, setwallet] = React.useState("");
+  const [wallet, setwallet] = useState("");
   const { setOpen } = useModal();
   const controls = useAnimation();
 
@@ -60,13 +60,13 @@ export function Header() {
         >
           Ascendix
         </Link>
-        { !authenticated && <LoginButton/> }
-        { authenticated && <span>{ ocAuth.getAuthInfo()?.edu_username }</span>}
+        {/*{ !authenticated && <LoginButton/> }*/}
+        {/*{ authenticated && <span>{ ocAuth.getAuthInfo()?.edu_username }</span>}*/}
 
         <Modal>
           <Button className="" size={"lg"} asChild>
             <ModalTrigger>
-              <div className="hidden md:block">Connect Wallet</div>
+              <div className="hidden md:block">Log In</div>
               <div className="block md:hidden">
                 <WalletIcon />
               </div>
