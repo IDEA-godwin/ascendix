@@ -3,6 +3,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { ModalProvider } from "~/components/personals/modal";
 
 import OCProvider from "~/providers/OCProvider";
 
@@ -23,7 +24,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} bg-[#050814] dark`}>
-        <OCProvider>{ children }</OCProvider>
+        <OCProvider>
+			<ModalProvider>{ children }</ModalProvider>
+		</OCProvider>
       </body>
     </html>
   );
