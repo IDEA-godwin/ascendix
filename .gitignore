@@ -1,0 +1,21 @@
+
+/*/.env
+
+# Hardhat files
+hardhat-app/cache
+hardhat-app/artifacts
+
+# TypeChain files
+hardhat-app/typechain
+hardhat-app/typechain-types
+
+# solidity-coverage files
+hardhat-app/coverage
+hardhat-app/coverage.json
+
+# Hardhat Ignition default folder for deployments against a local node
+hardhat-app/ignition/deployments/chain-31337
+
+/*/node_modules
+/*/.next
+/*/next-env.d.ts
