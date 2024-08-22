@@ -74,8 +74,8 @@ export function Header() {
           </Button>
           <ModalBody className="bg-red-200">
             <ModalContent>
-              <TypographyH4 className="text-center">
-                Add a Wallet to Ascendix
+              <TypographyH4 className="text-start">
+                Sign in
               </TypographyH4>
               <p>
                 <Label htmlFor="wallet" className="text-right">
