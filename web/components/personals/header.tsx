@@ -60,56 +60,41 @@ export function Header() {
         >
           Ascendix
         </Link>
-        {/*{ !authenticated && <LoginButton/> }*/}
-        {/*{ authenticated && <span>{ ocAuth.getAuthInfo()?.edu_username }</span>}*/}
+        { authenticated && <div className={"flex items-center"}>
+          { ocAuth.getAuthInfo()?.edu_username }
+          <span role={'button'} className={'ms-2 rounded-full bg-gray-100/[.06] w-8 h-8 inline-block overflow-hidden text-center'}>
+            <svg fill={'currentColor'} className={'w-max h-max'} viewBox='0 0 24 24'>
+            <path
+                d='M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z'/>
+          </svg>
+          </span>
+        </div>}
 
-        <Modal>
+        {!authenticated && <Modal>
           <Button className="" size={"lg"} asChild>
             <ModalTrigger>
               <div className="hidden md:block">Log In</div>
               <div className="block md:hidden">
-                <WalletIcon />
+                <WalletIcon/>
               </div>
             </ModalTrigger>
           </Button>
           <ModalBody className="bg-red-200">
             <ModalContent>
-              <TypographyH4 className="text-start">
-                Sign in
+              <TypographyH4 className="font-light text-2xl text-start">
+                Log In to Ascendix
               </TypographyH4>
-              <p>
-                <Label htmlFor="wallet" className="text-right">
-                  Wallet
-                </Label>
-                <Input
-                  id="wallet"
-                  value={wallet}
-                  placeholder="0x...1xx"
-                  className="mt-3"
-                  onChange={(e) => setwallet(e.target.value)}
-                />
+              <p className={'font-thin text-xs'}>
+                By logging in to Ascendix, you agree to Terms of Service and Privacy Policy and if you have an Open
+                Campus ID,
+                you agree to link your Open Campus ID and allow Ascendix to access and use your OCID info.
               </p>
+              <div className={'mt-4 flex items-center justify-start'}>
+                <p className={'pe-3'}>Have Open Campus ID? Or Create OCID </p> <LoginButton/>
+              </div>
             </ModalContent>
-            <ModalFooter>
-              <CloseIcon>
-                <Button
-                  className="w-full overflow-hidden"
-                  onClick={handleButtonClick}
-                >
-                  Add Address
-                  <motion.div
-                    className="w-6 h-6 ml-2"
-                    animate={controls}
-                    initial={{ rotate: 0 }}
-                    transition={{ duration: 1, ease: "easeInOut" }}
-                  >
-                    <RocketIcon />
-                  </motion.div>
-                </Button>
-              </CloseIcon>
-            </ModalFooter>
           </ModalBody>
-        </Modal>
+        </Modal>}
       </nav>
     </header>
   );

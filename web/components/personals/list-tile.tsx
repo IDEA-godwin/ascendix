@@ -24,7 +24,7 @@ export function ListTile({ questId = "1" }: { questId?: string }) {
         </div>
         <div className="flex justify-end pt-4">
           <Button asChild size={"sm"} className="space-x-0.5">
-            <Link href={`/view-all/${questId}`}>
+            <Link href={`/quests/${questId}`}>
               <div>View</div>
               <ChevronRight />
             </Link>

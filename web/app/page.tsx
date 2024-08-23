@@ -1,67 +1,68 @@
-import { ChevronRight, Sparkles, Swords } from "lucide-react";
+import {ChevronRight, Sparkles, Swords} from "lucide-react";
 import Link from "next/link";
-import { Meteors } from "~/components/meteors";
-import { Header } from "~/components/personals/header";
-import { ListTile } from "~/components/personals/list-tile";
-import { Button } from "~/components/ui/button";
+import {Meteors} from "~/components/meteors";
+import {Header} from "~/components/personals/header";
+import {ListTile} from "~/components/personals/list-tile";
+import {Button} from "~/components/ui/button";
 
 export default function Home() {
-  return (
-    <main className="text-white">
-      <Header />
-      <section className="min-h-[30rem] bg-foreground/10 relative overflow-hidden">
-        <Meteors number={40} />
-        <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
-          <div className="rounded-full w-96 h-80 blur-3xl bg-primary/30 left-1/2" />
-        </div>
-        <div className="container relative z-10 p-3 mx-auto text-center">
-          <h2 className="pt-16 text-4xl font-semibold">
-            Welcome to{" "}
-            <span className="text-transparent bg-gradient-to-br bg-clip-text from-primary to-primary-foreground">
+    return (
+        <main className="text-white">
+            <Header/>
+            <section className="min-h-[30rem] bg-foreground/10 relative overflow-hidden">
+                <Meteors number={40}/>
+                <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
+                    <div className="rounded-full w-96 h-80 blur-3xl bg-primary/30 left-1/2"/>
+                </div>
+                <div className="container relative z-10 p-3 mx-auto text-center">
+                    <h2 className="pt-16 text-4xl font-semibold">
+                        Welcome to{" "}
+                        <span
+                            className="text-transparent bg-gradient-to-br bg-clip-text from-primary to-primary-foreground">
               Ascendix
             </span>
-          </h2>
-          <p className="max-w-xl pt-10 mx-auto text-sm text-center">
-                         Ascendix transforms learning into an exciting adventure. Our platform gamifies education by
+                    </h2>
+                    <p className="max-w-xl pt-10 mx-auto text-sm text-center">
+                        Ascendix transforms learning into an exciting adventure. Our platform gamifies education by
                         allowing users to create and participate in quests on various topics. Each quest comes with
                         unique, AI-generated quizzes tailored to your learning level.
-          </p>
-          <div className="flex flex-col-reverse justify-center mt-10 md:gap-6 gap-3 md:flex-row">
-            <Button variant={"secondary"} className="" size={"lg"}>
-              Join a quest
-            </Button>
-            <Button className="" size={"lg"}>
-              Create a quest
-            </Button>
-          </div>
-        </div>
-      </section>
+                    </p>
+                    <div className="flex flex-col-reverse justify-center mt-10 md:gap-6 gap-3 md:flex-row">
+                        <Button variant={"secondary"} className="" size={"lg"}>
+                            <Link href={'/quests'}>Join a quest</Link>
+                        </Button>
+                        <Button className="" size={"lg"}>
+                            Create a quest
+                        </Button>
+                    </div>
+                </div>
+            </section>
 
-      <section className="mt-10">
-        <h2 className="relative mx-auto text-3xl font-semibold text-center max-w-fit">
-          <Sparkles className="absolute -top-4 -left-4 rotate-6 animate-pulse" />
-          <Sparkles className="absolute -bottom-4 -right-4 rotate-6 animate-pulse" />
-          <Sparkles className="absolute -top-4 right-1/3 rotate-6 animate-pulse" />
-          <Sparkles className="absolute -bottom-4 right-2/3 rotate-6 animate-pulse" />
-          Participace in Quests
-        </h2>
-        <div className="container p-3 mx-auto mt-20 gap-4 grid grid-cols-1 md:grid-cols-3">
-          <ListTile />
-          <ListTile />
-          <ListTile />
-        </div>
+            <section className="mt-10">
+                <h2 className="relative mx-auto text-3xl font-semibold text-center max-w-fit">
+                    <Sparkles className="absolute -top-4 -left-4 rotate-6 animate-pulse"/>
+                    <Sparkles className="absolute -bottom-4 -right-4 rotate-6 animate-pulse"/>
+                    <Sparkles className="absolute -top-4 right-1/3 rotate-6 animate-pulse"/>
+                    <Sparkles className="absolute -bottom-4 right-2/3 rotate-6 animate-pulse"/>
+                    Participace in Quests
+                </h2>
+                <div className="container p-3 mx-auto mt-20 gap-4 grid grid-cols-1 md:grid-cols-3">
+                    <ListTile/>
+                    <ListTile/>
+                    <ListTile/>
+                </div>
 
-        <div className="flex justify-center mt-10">
-          <Button asChild className="space-x-2">
-            <Link href={"/view-all"}>
-              <div>View All</div>
-              <Swords />
-            </Link>
-          </Button>
-        </div>
-      </section>
+                <div className="flex justify-center mt-10">
+                    <Button asChild className="space-x-2">
+                        <Link href={"/quests"}>
+                            <div>View All</div>
+                            <Swords/>
+                        </Link>
+                    </Button>
+                </div>
+            </section>
 
-       <footer className="mt-14 bg-foreground/20 rounded-md md:mt-20 md:mb-5 md:mx-10">
+            <footer className="mt-14 bg-foreground/20 rounded-md md:mt-20 md:mb-5 md:mx-10">
                 <div className="container p-3 mx-auto text-center">
                     <div className="flex flex-col items-center justify-between text-lg font-semibold md:flex-row gap-4">
                         <div>
@@ -100,8 +101,8 @@ export default function Home() {
                     </div>
                 </div>
             </footer>
-    </main>
-  );
+        </main>
+    );
 }
 
 
