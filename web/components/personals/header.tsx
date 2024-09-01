@@ -17,8 +17,6 @@ import {
   useModal,
 } from "~/components/personals/modal";
 import { Button } from "~/components/ui/button";
-import { Input } from "~/components/ui/input";
-import { Label } from "~/components/ui/label";
 import { TypographyH4 } from "./typography";
 
 export function Header() {
@@ -63,8 +61,7 @@ export function Header() {
         >
           Ascendix
         </Link>
-
-        <div>
+        <div className={'hidden md:block'}>
           <Link className={`me-3 hover:underline ${pathname == '/' ? 'underline' : ''}`} href={"/"}>Home</Link>
           <Link className={`mx-3 hover:underline ${pathname == '/quests' ? 'underline' : ''}`} href={"/quests"}>Quests</Link>
           <Link className={`ms-3 hover:underline ${pathname == '/about' ? 'underline' : ''}`} href={"/about"}>About</Link>
