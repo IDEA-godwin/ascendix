@@ -2,12 +2,12 @@
 
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
 import { ModalProvider } from "~/components/personals/modal";
 
 import OCProvider from "~/providers/OCProvider";
 
 const inter = Inter({ subsets: ["latin"] });
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Ascendix",
