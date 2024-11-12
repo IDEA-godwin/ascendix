@@ -6,8 +6,9 @@ import Link from "next/link";
 
 export function ListTile({ questId = "1" }: { questId?: string }) {
   return (
-    <div className="relative flex items-start p-4 overflow-hidden backdrop-blur-md bg-secondary/40 rounded-md gap-4">
-      <Meteors number={20} />
+    <div className="relative flex items-start p-4 overflow-idden backdrop-blur-md shadow-2xl bg-[#5B2B99]
+ rounded-md gap-4">
+      
       <div className="p-3 rounded-full bg-secondary-foreground/20 w-fit">
         <Swords />
       </div>
@@ -16,14 +17,14 @@ export function ListTile({ questId = "1" }: { questId?: string }) {
           <div>Name Of Quest</div>
           <Badge variant={"secondary"}>$30</Badge>
         </div>
-        <div className="text-xs text-muted-foreground line-clamp-3">
+        <div className="text-xs text-gray-300 line-clamp-3">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium
           quia laudantium eum minus rerum similique dolores perferendis placeat,
           hic necessitatibus odit eius qui a expedita quo iure. Nesciunt,
           officia animi!
         </div>
         <div className="flex justify-end pt-4">
-          <Button asChild size={"sm"} className="space-x-0.5">
+          <Button asChild size={"sm"} className="space-x-0.5 bg-gray-100 text-gray-900 hover:bg-gray-300">
             <Link href={`/quests/${questId}`}>
               <div>View</div>
               <ChevronRight />

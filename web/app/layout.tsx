@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-[#050814] dark`}>
+      <body className={`${inter.className}`}>
         <OCProvider>
 			<ModalProvider>{ children }</ModalProvider>
 		</OCProvider>
