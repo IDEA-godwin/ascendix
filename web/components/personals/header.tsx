@@ -56,8 +56,8 @@ export function Header() {
   }
 
   return (
-    <header className="bg-[#5B2B99] ">
-      <nav className="container shadow-2xl bg-[#5B2B99]  pr-8 pl-8 lg:pr-24 lg:pl-16 flex fixed z-20 justify-between items-center p-3  mx-auto ">
+    <header className="bg-[#5B2B99] w-full ">
+      <nav className=" shadow-2xl bg-[#5B2B99]  pr-8 pl-8 lg:pr-24 lg:pl-16 flex fixed z-20 justify-between items-center p-3 w-full mx-auto ">
         <Link
           href={"/"}
           className="flex items-center justify-center  text-lg font-semibold gap-2 md:gap-4 rounded-md  transition-all duration-300"
