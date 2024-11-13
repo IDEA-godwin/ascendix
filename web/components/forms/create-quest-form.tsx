@@ -34,9 +34,9 @@ export const CreateQuestForm = () => {
     },
   });
   return (
-    <form onSubmit={formik.handleSubmit}>
+    <form onSubmit={formik.handleSubmit} className="">
       <TypographyH4>Create a Quest</TypographyH4>
-      <div className="mt-5 flex flex-col gap-4">
+      <div className="mt-5 flex flex-col gap-4 ">
         <div className="grid grid-cols-2 gap-5">
           <Input
             placeholder="Title"
@@ -106,9 +106,9 @@ export const CreateQuestForm = () => {
         <CloseIcon>
           <Button
             type="submit"
-            variant={"secondary"}
+            
             size={"lg"}
-            className="w-full"
+            className="w-3/5 flex justify-center mt-8 mx-auto bg-[#5B2B99] "
           >
             Submit
           </Button>

@@ -50,7 +50,7 @@ export const ModalTrigger = ({
   return (
     <button
       className={cn(
-        "relative px-4 py-2 overflow-hidden text-center text-black rounded-md dark:text-white",
+        "relative px-2 py-2 overflow-hidden text-center text-black rounded-md dark:text-white",
         className
       )}
       onClick={() => setOpen(true)}
@@ -103,7 +103,7 @@ export const ModalBody = ({
           <motion.div
             ref={modalRef}
             className={cn(
-              "max-h-[90%] md:max-w-[60%] bg-white dark:bg-neutral-950 border border-transparent dark:border-neutral-800 md:rounded-2xl relative z-50 flex flex-col flex-1 overflow-hidden",
+              "max-h-[90%] md:max-w-[60%] max-w-[90%] bg-white  border border-transparent rounded-2xl relative z-50 flex flex-col flex-1 mt-10 md:mt-20 overflow-hidden",
               className
             )}
             initial={{
@@ -146,7 +146,7 @@ export const ModalContent = ({
   className?: string;
 }) => {
   return (
-    <div className={cn("flex flex-col flex-1 p-8 md:p-10", className)}>
+    <div className={cn("flex flex-col flex-1 p-8 md:p-10 ", className)}>
       {children}
     </div>
   );

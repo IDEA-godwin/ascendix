@@ -4,10 +4,21 @@ import Image from "next/image";
 import questImg from "~/public/peick.webp";
 import { Badge } from "~/components/ui/badge";
 import { Button } from "~/components/ui/button";
-import { Swords } from "lucide-react";
+import { Swords, ArrowRight } from "lucide-react";
 import { TypographyH2 } from "~/components/personals/typography";
 import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar";
 import { Card, CardContent } from "~/components/ui/card";
+import Footer from "~/providers/footer";
+import Link from "next/link";
+import {
+  Modal,
+  ModalBody,
+  ModalContent,
+  ModalTrigger,
+} from "~/components/personals/modal";
+import { CreateQuestForm } from "~/components/forms/create-quest-form";
+
+
 
 type QuestIdPageProps = {
   params: { [key: string]: string };
@@ -16,9 +27,9 @@ type QuestIdPageProps = {
 
 export default function QuestIdPage({}: QuestIdPageProps) {
   return (
-    <main>
+    <main className="text-white w-full h-full overflow-x-hidden ">
       <Header />
-      <div className="relative">
+      <div className="relative mt-20 ">
         <Image
           src={questImg}
           alt="Quest"
@@ -27,36 +38,49 @@ export default function QuestIdPage({}: QuestIdPageProps) {
           className="object-cover w-full md:max-h-[30rem] max-md:min-h-[20rem]"
         />
 
-        <Badge className="absolute z-10 top-2 right-2" variant={"secondary"}>
+        <Badge className="absolute z-10 top-10  right-10" variant={"secondary"}>
           $30
         </Badge>
-        <div className="absolute inset-0 flex items-end bg-black/70">
+        <div className="absolute inset-0 flex items-end pb-3 px-2 md:pb-24 md:px-6 lg:px-24 bg-black/70">
           <div className="w-full p-4 space-y-2">
-            <h1 className="max-w-xl text-4xl font-bold text-white">
+            <h1 className="max-w-xl text-3xl md:text-4xl font-bold text-white">
               Name Of Quest
             </h1>
-            <p className="flex items-end justify-between w-full text-lg text-white">
-              <div className="max-w-xl line-clamp-3">
+            <div className="flex md:items-end justify-between w-full text-lg text-white md:flex-row gap-6 flex-col">
+              <div className="max-w-xl line-clamp-3 text-sm md:text-lg">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 Praesentium quia laudantium eum minus rerum similique dolores
                 perferendis placeat, hic necessitatibus odit eius qui a expedita
                 quo iure. Nesciunt, officia animi!
               </div>
-              <Button className="hidden md:block">Join Quest</Button>
-            </p>
+              <div className=""><Button className="block">          <Link href={"/quests"}>
+     <div>Join a quest</div>                   
+     </Link></Button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div className="flex items-center justify-center mt-20">
-        <Button className="mx-auto" variant={"secondary"} size={"lg"}>
-          Join Quest <Swords className="ml-2" />
+      <div className="flex items-center justify-center mt-10">
+      <Modal>
+        <Button className="hover:bg-gray-300 bg-gray-100 text-gray-900" size={"lg"} asChild>
+          <ModalTrigger>Create a quest  <ArrowRight className="ml-3  group-hover:translate-x-2 transition-all duration-300" />
+          </ModalTrigger>
         </Button>
-      </div>
-      <div className="container p-3 mx-auto mt-20">
-        <div className="mt-10">
+        <ModalBody>
+          <ModalContent>
+            <CreateQuestForm />
+          </ModalContent>
+        </ModalBody>
+      </Modal>
+      </div >
+      <div className="container p-3 mx-auto ">
+        <div className="my-10">
           <Component />
         </div>
       </div>
+<Footer />
+
     </main>
   );
 }
@@ -106,7 +130,7 @@ function Component() {
 
   return (
     <div className="w-full max-w-2xl mx-auto">
-      <h2 className="mb-6 text-2xl font-bold text-center">Leaderboard</h2>
+      <h2 className="mb-6 text-2xl font-bold text-center text-gray-900">Leaderboard</h2>
       <div className="flex items-end justify-center mb-10 space-x-4 gap-6">
         {topThree.map((player, index) => (
           <div
@@ -116,7 +140,7 @@ function Component() {
             }`}
           >
             <Avatar
-              className={`${index == 0 ? "w-20 h-20" : "w-16 h-16"} mb-2`}
+              className={`${index == 0 ? "w-20 h-20 text-gray-900" : "w-16 h-16 text-gray-900"} mb-2`}
             >
               <AvatarImage src={player.avatar} alt={player.name} />
               <AvatarFallback>{player.name.charAt(0)}</AvatarFallback>
