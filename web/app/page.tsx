@@ -6,6 +6,9 @@ import { ListTile } from "~/components/personals/list-tile";
 import { Button } from "~/components/ui/button";
 import Image from 'next/image';
 import Footer from "~/providers/footer";
+import ConnectWallets from '~/components/connectWallet/Connect';
+  
+
 
 
 
@@ -25,7 +28,7 @@ export default function Home() {
       <Meteors number={20} />
   <div className="flex justify-center items-center md:flex-row flex-col md:w-5/6 mx-auto">
   
-  <div className="container relative z-10 p-3 mx-auto text-center md:text-left">
+  <div className="container z-5 p-3 mx-auto text-center md:text-left ">
     <h2 className="pt-16 text-4xl font-semibold">
       Welcome to{" "}
       <span className="text-transparent bg-gradient-to-br bg-clip-text from-primary to-primary-foreground">
@@ -58,9 +61,9 @@ export default function Home() {
       </Modal>
     </div>
   </div>
-<div className="pt-12 md:pt-28">
+<div className="pt-8 md:pt-28">
 <Image
-        src="/content.png" 
+        src="/scendixhero.png" 
         alt="content image"
         width={400} 
         height={200} 
@@ -132,6 +135,7 @@ export default function Home() {
                             <Swords/>
                         </Link>
                     </Button>
+
                 </div>
             </section>
 

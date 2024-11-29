@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Footer() {
   return (
-    <footer className="bg-[#5B2B99]  py-8 shadow-2xl">
+    <footer className="bg-[#5B2B99]  py-8 shadow-2xl bottom-0">
   
   <ul className="flex justify-center gap-8">
   

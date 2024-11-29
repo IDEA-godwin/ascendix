@@ -4,10 +4,12 @@ import { ClockIcon, RocketIcon, Wallet2Icon, WalletIcon } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
+import ConnectWallets from "../connectWallet/Connect";
 
 // @ts-ignore
 import {LoginButton, useOCAuth} from '@opencampus/ocid-connect-js'
 import {useEffect, useState} from "react";
+
 import {
   CloseIcon,
   Modal,
@@ -55,6 +57,8 @@ export function Header() {
       });
   }
 
+
+ 
   return (
     <header className="bg-[#5B2B99] w-full ">
       <nav className=" shadow-2xl bg-[#5B2B99]  pr-8 pl-8 lg:pr-24 lg:pl-16 flex fixed z-20 justify-between items-center p-3 w-full mx-auto ">
@@ -112,7 +116,7 @@ export function Header() {
               </div>
             </ModalTrigger>
           </Button>
-          <ModalBody className="bg-white text-gray-900 mx-6 rounded-lg">
+          <ModalBody className="bg-white text-gray-900  rounded-lg">
             <ModalContent>
               <TypographyH4 className=" text-2xl text-start">
                 Log In to Ascendix
@@ -122,8 +126,15 @@ export function Header() {
                 Campus ID,
                 you agree to link your Open Campus ID and allow Ascendix to access and use your OCID info.
               </p>
-              <div className={'mt-4 flex items-center justify-start'}>
-                <p className={'pe-3'}>Have Open Campus ID? Or Create OCID </p> <LoginButton/>
+              <div className={'mt-4 flex md:items-center gap-3 md:flex-row flex-col justify-start'}>
+                <p className={'pe-3'}>Have Open Campus ID? Or Create OCID </p> 
+                <div className="flex  items-center gap-3"> 
+                  <LoginButton/> 
+                <p> Or </p>
+                <ConnectWallets />
+                
+                </div>
+               
               </div>
             </ModalContent>
           </ModalBody>
@@ -159,20 +170,27 @@ export function Header() {
             </ModalTrigger>
           </Button>
           <ModalBody className="bg-white text-gray-900">
-            <ModalContent>
-              <TypographyH4 className=" text-2xl text-start">
-                Log In to Ascendix
-              </TypographyH4>
-              <p className={'py-2 text-xs'}>
-                By logging in to Ascendix, you agree to Terms of Service and Privacy Policy and if you have an Open
-                Campus ID,
-                you agree to link your Open Campus ID and allow Ascendix to access and use your OCID info.
-              </p>
-              <div className={'mt-4 flex items-center justify-start'}>
-                <p className={'pe-3'}>Have Open Campus ID? Or Create OCID </p> <LoginButton/>
-              </div>
-            </ModalContent>
-          </ModalBody>
+  <ModalContent>
+    <TypographyH4 className="text-2xl text-start">Log In to Ascendix</TypographyH4>
+    <p className="py-2 text-xs">
+      By logging in to Ascendix, you agree to Terms of Service and Privacy Policy and if you have an Open Campus ID,
+      you agree to link your Open Campus ID and allow Ascendix to access and use your OCID info.
+    </p>
+    <div className="mt-4 flex items-center justify-start">
+      <p className="pe-3">Have Open Campus ID? Or Create OCID</p>
+      <div className="flex items-center gap-4">
+        <LoginButton />
+        <p>Or</p>
+        <ConnectWallets />
+        
+       
+        
+      </div>
+    </div>
+  </ModalContent>
+  
+</ModalBody>
+
         </Modal>}
         
       </nav>
