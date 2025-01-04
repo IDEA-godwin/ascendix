@@ -4,10 +4,12 @@ import { ClockIcon, RocketIcon, Wallet2Icon, WalletIcon } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
+import ConnectWallets from "../connectWallet/Connect";
 
 // @ts-ignore
 import {LoginButton, useOCAuth} from '@opencampus/ocid-connect-js'
 import {useEffect, useState} from "react";
+
 import {
   useModal,
 } from "~/components/personals/modal";
@@ -48,6 +50,8 @@ export function Header() {
       });
   }
 
+
+ 
   return (
     <header className="bg-[#5B2B99] w-full ">
       <nav className=" shadow-2xl bg-[#5B2B99]  pr-8 pl-8 lg:pr-24 lg:pl-16 flex fixed z-20 justify-between items-center p-3 w-full mx-auto ">
@@ -72,7 +76,7 @@ export function Header() {
           <Link className={`hover:bg-primary/30 py-2 text-white rounded-md w-fit md:px-6 ${pathname == '/about' ? 'bg-primary/30' : ''}`} href={"/about"}>About</Link>
         </div>
         <div className="hidden lg:flex">
-          <ConnectButton />
+          <ConnectButton/>
         </div>
 
         {/* Hamburger Menu Button (visible on small screens) */}

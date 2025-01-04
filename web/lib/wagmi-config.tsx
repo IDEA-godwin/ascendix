@@ -17,6 +17,10 @@ if (!projectId) {
 //   }
 // })
 
+// Optional: Log a warning instead of throwing an error
+if (!process.env.NEXT_PUBLIC_PROJECT_ID) {
+  console.warn('⚠️ Project ID is not defined. Using development fallback.')
+}
 export const networks = [mainnet, arbitrum] as [AppKitNetwork, ...AppKitNetwork[]]
 
 // Set up the Wagmi Adapter (Config)
