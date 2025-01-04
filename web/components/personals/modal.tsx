@@ -71,7 +71,7 @@ export const ModalBody = ({
 
   useEffect(() => {
     if (open) {
-      document.body.style.overflow = "hidden";
+      document.body.style.overflow = "hidde";
     } else {
       document.body.style.overflow = "auto";
     }
@@ -146,7 +146,7 @@ export const ModalContent = ({
   className?: string;
 }) => {
   return (
-    <div className={cn("flex flex-col flex-1 p-8 md:p-10 ", className)}>
+    <div className={cn("flex flex-col flex-1 py-8 px-4 md:p-10 ", className)}>
       {children}
     </div>
   );
