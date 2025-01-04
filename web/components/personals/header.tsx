@@ -60,12 +60,12 @@ export function Header() {
           className="flex items-center justify-center  text-lg font-semibold gap-2 md:gap-4 rounded-md  transition-all duration-300"
         >
           <Image
-        src="/ascendix1.png" 
-        alt="Description of the image"
-        width={70} 
-        height={70} 
-        priority={true} 
-      /> <span className="text-2xl text-white">ASCENDIX</span> 
+            src="/ascendix1.png" 
+            alt="Description of the image"
+            width={70} 
+            height={70} 
+            priority={true} 
+          /> <span className="text-2xl text-white">ASCENDIX</span> 
 
         </Link>
 

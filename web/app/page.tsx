@@ -7,10 +7,6 @@ import { Button } from "~/components/ui/button";
 import Image from 'next/image';
 import Footer from "~/providers/footer";
 import ConnectWallets from '~/components/connectWallet/Connect';
-  
-
-
-
 
 import {
   Modal,
