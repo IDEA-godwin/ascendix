@@ -9,16 +9,8 @@ import Image from 'next/image';
 import {LoginButton, useOCAuth} from '@opencampus/ocid-connect-js'
 import {useEffect, useState} from "react";
 import {
-  CloseIcon,
-  Modal,
-  ModalBody,
-  ModalContent,
-  ModalFooter,
-  ModalTrigger,
   useModal,
 } from "~/components/personals/modal";
-import { Button } from "~/components/ui/button";
-import { TypographyH4 } from "./typography";
 import { ConnectButton } from "./connect-button";
 
 export function Header() {
@@ -78,7 +70,6 @@ export function Header() {
           <Link className={`hover:bg-primary/30 py-2 text-white rounded-md w-fit md:px-6 ${pathname == '/' ? 'bg-primary/30' : ''}`} href={"/"}>Home</Link>
           <Link className={`hover:bg-primary/30 py-2 text-white rounded-md w-fit md:px-6 ${pathname == '/quests' ? 'bg-primary/30' : ''}`} href={"/quests"}>Quests</Link>
           <Link className={`hover:bg-primary/30 py-2 text-white rounded-md w-fit md:px-6 ${pathname == '/about' ? 'bg-primary/30' : ''}`} href={"/about"}>About</Link>
-          <Link className={` hover:bg-primary/30 py-2 text-white rounded-md w-fit md:px-6 ${pathname == '/task' ? 'bg-primary/30' : ''}`} href={"/task"}>Tasks</Link>
         </div>
         <div className="hidden lg:flex">
           <ConnectButton />
@@ -111,7 +102,6 @@ export function Header() {
               <Link onClick={() => handleButtonClick()} className={`block px-4 text-white hover:bg-primary/30 py-2 rounded-md w-full ${pathname == '/' ? 'bg-primary/30 py-2 rounded-md w-fit' : ''}`} href={"/"}>Home</Link>
               <Link onClick={() => handleButtonClick()} className={`block px-4 text-white hover:bg-primary/30 py-2 rounded-md w-full ${pathname == '/quests' ? 'bg-primary/30' : ''}`} href={"/quests"}>Quests</Link>
               <Link onClick={() => handleButtonClick()} className={`block px-4 text-white hover:bg-primary/30 py-2 rounded-md w-full ${pathname == '/about' ? 'bg-primary/30' : ''}`} href={"/about"}>About us</Link>
-              <Link onClick={() => handleButtonClick()} className={`block px-4 text-white hover:bg-primary/30 py-2 rounded-md w-full ${pathname == '/task' ? 'bg-primary/30' : ''}`} href={"/task"}>Tasks</Link>
               <div className="w-full flex justify-end">
                 <ConnectButton /> 
               </div> 

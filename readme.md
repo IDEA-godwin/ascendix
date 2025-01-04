@@ -47,3 +47,13 @@ need more information contact godwinaquinas@gmail.com
 
 Ascendix: 
 Empowering learners worldwide through gamified, AI-enhanced, and blockchain-supported knowledge quests.
+
+cargo stylus deploy \
+  --endpoint='https://rpc.edu-chain.raas.gelato.cloud/' \
+  --private-key="0xb6b15c8cb491557369f3c7d2c287b053eb229daa9c22138887752191c9520659" \
+  --estimate-gas
+
+cargo stylus deploy \
+  --endpoint='https://rpc.edu-chain.raas.gelato.cloud/' \
+  --private-key="0xb690235697e4df8e4899b81219af03465ed0e80e63a78677b226555505b489b0" \
+  --no-verify
