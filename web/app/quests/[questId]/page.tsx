@@ -27,58 +27,63 @@ type QuestIdPageProps = {
 
 export default function QuestIdPage({}: QuestIdPageProps) {
   return (
-    <main className="text-white w-full h-full overflow-x-hidden ">
+    <main className="  h-full overflow-x-hidden ">
       <Header />
-      <div className="relative mt-20 ">
+    <div className="flex w-[90%] mx-auto mt-[10%] md:flex-row flex-col md:justify-between">
+    <div className="relative mt-20 ">
         <Image
           src={questImg}
           alt="Quest"
           width={500}
-          height={500}
-          className="object-cover w-full md:max-h-[30rem] max-md:min-h-[20rem]"
+          height={200}
+          className="object-cover rounded-md"
         />
 
-        <Badge className="absolute z-10 top-10  right-10" variant={"secondary"}>
+        <Badge className="absolute z-10 top-10  right-[10%]" variant={"secondary"}>
           $30
         </Badge>
-        <div className="absolute inset-0 flex items-end pb-3 px-2 md:pb-24 md:px-6 lg:px-24 bg-black/70">
-          <div className="w-full p-4 space-y-2">
-            <h1 className="max-w-xl text-3xl md:text-4xl font-bold text-white">
-              Name Of Quest
+        <div className=" inset-0 flex  pb-3 md:pb-24  ">
+          <div className="w-full py-4 space-y-2">
+            <h1 className="max-w-xl text-3xl md:text-4xl font-bold ">
+            QuestSphere
             </h1>
-            <div className="flex md:items-end justify-between w-full text-lg text-white md:flex-row gap-6 flex-col">
-              <div className="max-w-xl line-clamp-3 text-sm md:text-lg">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Praesentium quia laudantium eum minus rerum similique dolores
-                perferendis placeat, hic necessitatibus odit eius qui a expedita
-                quo iure. Nesciunt, officia animi!
+            <div className="flex  w-full text-lg   gap-6 flex-col">
+              <div className="max-w-lg line-clamp-3 text-sm md:text-lg">
+              QuestSphere is a dynamic platform where education meets adventure! Dive into a world of user-created quests spanning diverse topics and challenges. With each quest, you unlock AI-crafted quizzes designed to match your skill level and keep you engaged. Whether you are exploring new subjects or mastering old ones, QuestSphere makes learning a journey worth taking.
               </div>
               <div className=""><Button className="block">          <Link href={"/quests"}>
-     <div>Join a quest</div>                   
+     <div>Participate in a quest</div>                   
      </Link></Button>
               </div>
+           <div className="flex items-center justify-center md:justify-end gap-8">
+           <div className=""><Button className="block ">          <Link href={"/"}>
+     <div>Reward Quests</div>                   
+     </Link></Button>
+              </div>
+
+              <div className=""><button className="block bg-red-600 text-white px-4 py-2 hover:bg-red-700 rounded-lg text-sm">
+     <div>Cancel Quest</div>                   
+     </button>
+              </div>
+
+           </div>
+
             </div>
           </div>
         </div>
       </div>
-      <div className="flex items-center justify-center mt-10">
-      <Modal>
-        <Button className="hover:bg-gray-300 bg-gray-100 text-gray-900" size={"lg"} asChild>
-          <ModalTrigger>Create a quest  <ArrowRight className="ml-3  group-hover:translate-x-2 transition-all duration-300" />
-          </ModalTrigger>
-        </Button>
-        <ModalBody>
-          <ModalContent>
-            <CreateQuestForm />
-          </ModalContent>
-        </ModalBody>
-      </Modal>
-      </div >
-      <div className="container p-3 mx-auto ">
+
+      <div className="md:w-[60%] w-full p-3 mx-auto ">
         <div className="my-10">
           <Component />
         </div>
       </div>
+
+
+
+
+
+    </div>
 <Footer />
 
     </main>
@@ -129,9 +134,9 @@ function Component() {
   const rest = leaderboardData.slice(3);
 
   return (
-    <div className="w-full max-w-2xl mx-auto">
+    <div className="md:w-[90%] w-full max-w-2xl mx-auto mb-32 ">
       <h2 className="mb-6 text-2xl font-bold text-center text-gray-900">Leaderboard</h2>
-      <div className="flex items-end justify-center mb-10 space-x-4 gap-6">
+      <div className="flex items-end justify-center mb-10  gap-6">
         {topThree.map((player, index) => (
           <div
             key={player.id}

@@ -15,17 +15,14 @@ export function ListTile({ questId = "1" }: { questId?: string }) {
       </div>
       <div className="pt-2 space-y-2">
         <div className="flex justify-between items-center">
-          <div>Name Of Quest</div>
-          <div className="bg-blue-500 px-4 text-sm py-2 rounded-full ">
+          <div>QuestSphere</div>
+          <div className="bg-violet-500 px-4 text-sm py-2 rounded-full ">
         <p>Open</p>
       </div>
 
         </div> 
         <div className="text-xs text-gray-300 line-clamp-3">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium
-          quia laudantium eum minus rerum similique dolores perferendis placeat,
-          hic necessitatibus odit eius qui a expedita quo iure. Nesciunt,
-          officia animi!
+        QuestSphere is a dynamic platform where education meets adventure! Dive into a world of user-created quests spanning diverse topics and challenges. With each quest, you unlock AI-crafted quizzes designed to match your skill level and keep you engaged. Whether you are exploring new subjects or mastering old ones, QuestSphere makes learning a journey worth taking.
         </div>
        
       </div>

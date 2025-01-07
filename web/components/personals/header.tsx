@@ -102,11 +102,11 @@ export function Header() {
         {/* Sidebar Menu for Small Screens */}
         {isMenuOpen && (
           <div className="absolute top-20 left-0 w-full text-end bg-[#5B2B99] px-4 pb-3 shadow-lg lg:hidden">
-            <div className="">
-              <Link onClick={() => handleButtonClick()} className={`block px-4 text-white hover:bg-primary/30 py-2 rounded-md w-full ${pathname == '/' ? 'bg-primary/30 py-2 rounded-md w-fit' : ''}`} href={"/"}>Home</Link>
-              <Link onClick={() => handleButtonClick()} className={`block px-4 text-white hover:bg-primary/30 py-2 rounded-md w-full ${pathname == '/quests' ? 'bg-primary/30' : ''}`} href={"/quests"}>Quests</Link>
-              <Link onClick={() => handleButtonClick()} className={`block px-4 text-white hover:bg-primary/30 py-2 rounded-md w-full ${pathname == '/about' ? 'bg-primary/30' : ''}`} href={"/about"}>About us</Link>
-              <div className="w-full flex justify-end">
+            <div className="pt-6 flex flex-col gap-2">
+              <Link onClick={() => handleButtonClick()} className={`block px-4 w-fit text-white hover:bg-primary/30 py-2 rounded-md  ${pathname == '/' ? 'bg-primary/30 py-2 rounded-md w-fit' : ''}`} href={"/"}>Home</Link>
+              <Link onClick={() => handleButtonClick()} className={`block px-4 text-white hover:bg-primary/30 py-2 rounded-md w-fit ${pathname == '/quests' ? 'bg-primary/30' : ''}`} href={"/quests"}>Quests</Link>
+              <Link onClick={() => handleButtonClick()} className={`block px-4 text-white hover:bg-primary/30 py-2 rounded-md w-fit ${pathname == '/about' ? 'bg-primary/30' : ''}`} href={"/about"}>About us</Link>
+              <div className="w-full flex justify-start">
                 <ConnectButton /> 
               </div> 
             </div>
