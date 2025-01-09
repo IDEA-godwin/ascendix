@@ -1,13 +1,16 @@
+"use client"
 import React from "react";
 import { Header } from "~/components/personals/header";
 import Image from "next/image";
 import questImg from "~/public/peick.webp";
 import { Badge } from "~/components/ui/badge";
 import { Button } from "~/components/ui/button";
-import { Swords, ArrowRight } from "lucide-react";
+import { Swords, ArrowRight, ChevronDown } from "lucide-react";
 import { TypographyH2 } from "~/components/personals/typography";
 import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar";
 import { Card, CardContent } from "~/components/ui/card";
+import { useState } from 'react';
+
 import Footer from "~/providers/footer";
 import Link from "next/link";
 import {
@@ -26,10 +29,16 @@ type QuestIdPageProps = {
 };
 
 export default function QuestIdPage({}: QuestIdPageProps) {
+  const [dropdownVisible, setDropdownVisible] = useState(false);
+
+  const toggleDropdown = () => {
+    setDropdownVisible(!dropdownVisible);
+  };
+
   return (
     <main className="  h-full overflow-x-hidden ">
       <Header />
-    <div className="flex w-[90%] mx-auto mt-[10%] md:flex-row flex-col md:justify-between">
+    <div className="flex w-[90%] mx-auto mt-[10%] md:mt-[7%] md:flex-row items-center flex-col gap-8 md:gap-0  md:justify-between">
     <div className="relative mt-20 ">
         <Image
           src={questImg}
@@ -42,7 +51,12 @@ export default function QuestIdPage({}: QuestIdPageProps) {
         <Badge className="absolute z-10 top-10  right-[10%]" variant={"secondary"}>
           $30
         </Badge>
-        <div className=" inset-0 flex  pb-3 md:pb-24  ">
+
+        <div className="text-white  absolute z-10 top-10  left-[5%] bg-violet-500 px-2 text-sm py-2 rounded-full ">
+        <p className="text-xs">On Going</p>
+      </div>
+
+        <div className=" inset-0 flex mb-32 rounded-lg mt-6 shadow-2xl px-6  pb-3 md:pb-6  ">
           <div className="w-full py-4 space-y-2">
             <h1 className="max-w-xl text-3xl md:text-4xl font-bold ">
             QuestSphere
@@ -55,18 +69,7 @@ export default function QuestIdPage({}: QuestIdPageProps) {
      <div>Participate in a quest</div>                   
      </Link></Button>
               </div>
-           <div className="flex items-center justify-center md:justify-end gap-8">
-           <div className=""><Button className="block ">          <Link href={"/"}>
-     <div>Reward Quests</div>                   
-     </Link></Button>
-              </div>
-
-              <div className=""><button className="block bg-red-600 text-white px-4 py-2 hover:bg-red-700 rounded-lg text-sm">
-     <div>Cancel Quest</div>                   
-     </button>
-              </div>
-
-           </div>
+       
 
             </div>
           </div>
@@ -74,6 +77,29 @@ export default function QuestIdPage({}: QuestIdPageProps) {
       </div>
 
       <div className="md:w-[60%] w-full p-3 mx-auto ">
+      <div>
+      <div onClick={toggleDropdown} className="cursor-pointer flex justify-center ">
+      <Button className="">
+          Admin Action
+          <ChevronDown className={`w-6 h-6 text-gray-100 transition-transform ${dropdownVisible ? 'rotate-180' : 'rotate-0'}`} />
+        </Button> </div>
+      {dropdownVisible && (
+        <div className="flex mt-6 justify-center   gap-6">
+          <div>
+            <Button className="block">
+              <Link href={"/"}>
+                <div>Reward Quests</div>
+              </Link>
+            </Button>
+          </div>
+          <div>
+            <button className="block bg-red-600 text-white px-4 py-2 hover:bg-red-700 rounded-lg text-sm">
+              <div>Cancel Quest</div>
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
         <div className="my-10">
           <Component />
         </div>
