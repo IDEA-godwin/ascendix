@@ -38,21 +38,21 @@ export default function QuestIdPage({}: QuestIdPageProps) {
   return (
     <main className="  h-full overflow-x-hidden ">
       <Header />
-    <div className="flex w-[90%] mx-auto mt-[10%] md:mt-[7%] md:flex-row  flex-col gap-8 md:gap-0  md:justify-between">
-    <div className="relative mt-20 ">
+    <div className="flex w-[90%] mx-auto mt-[10%] md:mt-[7%] md:flex-row mb-32 flex-col gap-8 md:gap-0  md:justify-between">
+    <div className="relative mt-20 h-fit shadow-2xl rounded-lg">
         <Image
           src={questImg}
           alt="Quest"
           width={500}
           height={200}
-          className="object-cover rounded-md"
+          className="object-cover w-full"
         />
 
         <div className="text-white  absolute z-10 top-2  left-[2%] bg-green-500 px-2 text-sm py-1 rounded-full ">
         <p className="text-[10px]">On Going</p>
       </div>
 
-        <div className=" inset-0 flex mb-32 rounded-lg mt-6 shadow-2xl px-6  pb-3 md:pb-6  ">
+        <div className=" inset-0 flex   px-6  pb-3 md:pb-6  ">
           <div className="w-full py-4 space-y-2">
      <div className="flex justify-between items-center"> 
      <h1 className="max-w-xl text-3xl md:text-4xl font-bold ">
@@ -80,8 +80,8 @@ export default function QuestIdPage({}: QuestIdPageProps) {
 
       <div className="md:w-[60%] w-full p-3 mx-auto md:mt-16">
       <div>
-      <div onClick={toggleDropdown} className="cursor-pointer flex justify-between items-center border-b border-gray-700 md:w-[90%] mx-auto pb-2 mb-6 md:mb-0">
-      <div className=" px-6 py-2 rounded-lg text-sm flex gap-1 items-center">
+      <div onClick={toggleDropdown} className="cursor-pointer flex justify-between items-center border-b border-gray-700 md:w-[60%] mx-auto  ">
+      <div className=" py-1 rounded-lg text-sm flex gap-1 items-center">
           Admin Action </div>
           <ChevronDown className={`w-6 h-6  transition-transform ${dropdownVisible ? 'rotate-180' : 'rotate-0'}`} />
          </div>
