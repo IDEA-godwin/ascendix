@@ -38,7 +38,7 @@ export default function QuestIdPage({}: QuestIdPageProps) {
   return (
     <main className="  h-full overflow-x-hidden ">
       <Header />
-    <div className="flex w-[90%] mx-auto mt-[10%] md:mt-[7%] md:flex-row items-center flex-col gap-8 md:gap-0  md:justify-between">
+    <div className="flex w-[90%] mx-auto mt-[10%] md:mt-[7%] md:flex-row  flex-col gap-8 md:gap-0  md:justify-between">
     <div className="relative mt-20 ">
         <Image
           src={questImg}
@@ -52,8 +52,8 @@ export default function QuestIdPage({}: QuestIdPageProps) {
           $30
         </Badge>
 
-        <div className="text-white  absolute z-10 top-10  left-[5%] bg-violet-500 px-2 text-sm py-2 rounded-full ">
-        <p className="text-xs">On Going</p>
+        <div className="text-white  absolute z-10 top-2  left-[2%] bg-green-500 px-2 text-sm py-1 rounded-full ">
+        <p className="text-[10px]">On Going</p>
       </div>
 
         <div className=" inset-0 flex mb-32 rounded-lg mt-6 shadow-2xl px-6  pb-3 md:pb-6  ">
@@ -65,32 +65,20 @@ export default function QuestIdPage({}: QuestIdPageProps) {
               <div className="max-w-lg line-clamp-3 text-sm md:text-lg">
               QuestSphere is a dynamic platform where education meets adventure! Dive into a world of user-created quests spanning diverse topics and challenges. With each quest, you unlock AI-crafted quizzes designed to match your skill level and keep you engaged. Whether you are exploring new subjects or mastering old ones, QuestSphere makes learning a journey worth taking.
               </div>
-              <div className=""><Button className="block">          <Link href={"/quests"}>
-     <div>Participate in a quest</div>                   
-     </Link></Button>
-              </div>
-       
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="md:w-[60%] w-full p-3 mx-auto ">
-      <div>
+              <div>
       <div onClick={toggleDropdown} className="cursor-pointer flex justify-center ">
-      <Button className="">
+      <button className="bg-gray-950 text-white px-6 py-2 hover:bg-gray-900 rounded-lg text-sm flex gap-1 items-center">
           Admin Action
           <ChevronDown className={`w-6 h-6 text-gray-100 transition-transform ${dropdownVisible ? 'rotate-180' : 'rotate-0'}`} />
-        </Button> </div>
+        </button> </div>
       {dropdownVisible && (
         <div className="flex mt-6 justify-center   gap-6">
           <div>
-            <Button className="block">
+            <button className="block bg-green-500 text-white px-4 py-2 hover:bg-green-600 rounded-lg text-sm">
               <Link href={"/"}>
                 <div>Reward Quests</div>
               </Link>
-            </Button>
+            </button>
           </div>
           <div>
             <button className="block bg-red-600 text-white px-4 py-2 hover:bg-red-700 rounded-lg text-sm">
@@ -100,9 +88,23 @@ export default function QuestIdPage({}: QuestIdPageProps) {
         </div>
       )}
     </div>
+       
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="md:w-[60%] w-full p-3 mx-auto md:mt-8">
+    
         <div className="my-10">
           <Component />
-        </div>
+       
+        <div className="flex justify-center items-center"><Button className="block">          <Link href={"/quests"}>
+     <div>Participate in a quest</div>                   
+     </Link></Button>
+              </div>
+              </div>
       </div>
 
 
@@ -160,7 +162,7 @@ function Component() {
   const rest = leaderboardData.slice(3);
 
   return (
-    <div className="md:w-[90%] w-full max-w-2xl mx-auto mb-32 ">
+    <div className="md:w-[90%] w-full max-w-2xl mx-auto mb-10 ">
       <h2 className="mb-6 text-2xl font-bold text-center text-gray-900">Leaderboard</h2>
       <div className="flex items-end justify-center mb-10  gap-6">
         {topThree.map((player, index) => (
