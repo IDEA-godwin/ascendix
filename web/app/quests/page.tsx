@@ -45,7 +45,6 @@ export default function ViewAllPage({
           </Modal>
         </div>
       </div>
-
       <Footer />
     </main>
   );

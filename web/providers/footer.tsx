@@ -2,9 +2,8 @@ import React from 'react'
 
 export default function Footer() {
   return (
-    <footer className="fixed bottom-0 w-full mx-auto py-2 bg-[#5B2B99] shadow-2xl">
-<div className='justify-center items-center flex flex-col ' >
-<ul className="flex justify-center gap-8">
+    <div className='justify-center items-center flex flex-col bg-[#5B2B99] py-2'>
+      <ul className="flex justify-center gap-8">
         <li>
           <a href="#" className="text-gray-100 hover:text-blue-400">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -27,10 +26,7 @@ export default function Footer() {
           </a>
         </li>
       </ul>
-     <div className="py-4 text-sm text-gray-300 text-center">&copy; 2024. Ascendix. All rights reserved.  </div> 
-
-  
-  
-  </div>    </footer>
+      <div className="pt-2 text-sm text-gray-300 text-center">&copy; 2024. Ascendix. All rights reserved.</div> 
+    </div> 
   )
 }

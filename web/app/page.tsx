@@ -58,9 +58,9 @@ export default function Home() {
             <Image src="/content.png" alt="content image" width={400} height={200} priority={true} />
           </div>
         </div>
-        <div className="">
+        <footer className="fixed bottom-0 w-full mx-auto shadow-2xl">
           <Footer />
-        </div>
+        </footer>
       </section>
     </main>
   );
