@@ -48,62 +48,63 @@ export default function QuestIdPage({}: QuestIdPageProps) {
           className="object-cover rounded-md"
         />
 
-        <Badge className="absolute z-10 top-10  right-[10%]" variant={"secondary"}>
-          $30
-        </Badge>
-
         <div className="text-white  absolute z-10 top-2  left-[2%] bg-green-500 px-2 text-sm py-1 rounded-full ">
         <p className="text-[10px]">On Going</p>
       </div>
 
         <div className=" inset-0 flex mb-32 rounded-lg mt-6 shadow-2xl px-6  pb-3 md:pb-6  ">
           <div className="w-full py-4 space-y-2">
-            <h1 className="max-w-xl text-3xl md:text-4xl font-bold ">
+     <div className="flex justify-between items-center"> 
+     <h1 className="max-w-xl text-3xl md:text-4xl font-bold ">
             QuestSphere
             </h1>
+
+            <Badge className=" z-10 " variant={"secondary"}>
+          $30
+        </Badge>
+     </div>
+
             <div className="flex  w-full text-lg   gap-6 flex-col">
               <div className="max-w-lg line-clamp-3 text-sm md:text-lg">
               QuestSphere is a dynamic platform where education meets adventure! Dive into a world of user-created quests spanning diverse topics and challenges. With each quest, you unlock AI-crafted quizzes designed to match your skill level and keep you engaged. Whether you are exploring new subjects or mastering old ones, QuestSphere makes learning a journey worth taking.
               </div>
-              <div>
-      <div onClick={toggleDropdown} className="cursor-pointer flex justify-center ">
-      <button className="bg-gray-950 text-white px-6 py-2 hover:bg-gray-900 rounded-lg text-sm flex gap-1 items-center">
-          Admin Action
-          <ChevronDown className={`w-6 h-6 text-gray-100 transition-transform ${dropdownVisible ? 'rotate-180' : 'rotate-0'}`} />
-        </button> </div>
-      {dropdownVisible && (
-        <div className="flex mt-6 justify-center   gap-6">
-          <div>
-            <button className="block bg-green-500 text-white px-4 py-2 hover:bg-green-600 rounded-lg text-sm">
-              <Link href={"/"}>
-                <div>Reward Quests</div>
-              </Link>
-            </button>
-          </div>
-          <div>
-            <button className="block bg-red-600 text-white px-4 py-2 hover:bg-red-700 rounded-lg text-sm">
-              <div>Cancel Quest</div>
-            </button>
-          </div>
-        </div>
-      )}
-    </div>
-       
+              <div className="flex justify-end items-center"><Button className="block">          <Link href={"/quests"}>
+     <div>Participate in a quest</div>                   
+     </Link></Button>
+              </div>
 
             </div>
           </div>
         </div>
       </div>
 
-      <div className="md:w-[60%] w-full p-3 mx-auto md:mt-8">
-    
+      <div className="md:w-[60%] w-full p-3 mx-auto md:mt-16">
+      <div>
+      <div onClick={toggleDropdown} className="cursor-pointer flex justify-between items-center border-b border-gray-700 md:w-[90%] mx-auto pb-2 mb-6 md:mb-0">
+      <div className=" px-6 py-2 rounded-lg text-sm flex gap-1 items-center">
+          Admin Action </div>
+          <ChevronDown className={`w-6 h-6  transition-transform ${dropdownVisible ? 'rotate-180' : 'rotate-0'}`} />
+         </div>
+      {dropdownVisible && (
+        <div className="flex mt-6 justify-center   gap-6">
+          <div>
+            <button className="block bg-green-500 text-white px-4 py-2 hover:bg-green-600 rounded-lg text-sm">
+              <Link href={"/"}>
+                <div>Reward Participant</div>
+              </Link>
+            </button>
+          </div>
+          <div>
+            <button className="block bg-red-600 text-white px-4 py-2 hover:bg-red-700 rounded-lg text-sm">
+              <div>End Quest</div>
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
+       
         <div className="my-10">
           <Component />
-       
-        <div className="flex justify-center items-center"><Button className="block">          <Link href={"/quests"}>
-     <div>Participate in a quest</div>                   
-     </Link></Button>
-              </div>
               </div>
       </div>
 
